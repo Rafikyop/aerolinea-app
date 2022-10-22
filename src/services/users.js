@@ -1,29 +1,31 @@
-import axios from 'axios';
-const URL_API = 'http://localhost:5000';
+import axios from "axios";
+const URL_API = "https://sesion19-back.herokuapp.com";
 
 export const getLogin = async (username, password) => {
-    try {
-        const {data} = await axios.get(`${URL_API}/users?user=${username}&password=${password}`)
-        return data;
-    } catch (error) {
-        return error
-    }
-}
+  try {
+    const { data } = await axios.get(
+      `${URL_API}/users?user=${username}&password=${password}`
+    );
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
 
 export const createUser = async (user) => {
-    try {
-        const {data} = await axios.post(`${URL_API}/users`, user)
-        return data;
-    } catch (error) {
-        return error
-    }
-}
+  try {
+    const { data } = await axios.post(`${URL_API}/users`, user);
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
 
 export const getUsers = async () => {
-    try {
-        const {data} = await axios.get(`${URL_API}/users`)
-        return data;
-    } catch (error) {
-        return []
-    }
-}
+  try {
+    const { data } = await axios.get(`${URL_API}/users`);
+    return data;
+  } catch (error) {
+    return [];
+  }
+};
